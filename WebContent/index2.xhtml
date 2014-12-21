@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+
+	<ui:composition template="WEB-INF/mainTemplate.xhtml">
+		<ui:define name="content">
+
+			<h:form id="slick-login">
+				<p:growl id="growl" />
+				<p:panelGrid styleClass="centerH centerV noBorder">
+					<p:row>
+						<p:column colspan="2">
+						
+							<h:commandLink id="facebook" value="Login With FaceBook" immediate="true"
+								ajax="false" action="#{userSession.socialConnect}">
+								<f:setPropertyActionListener target="#{userSession.providerID}"
+									value="facebook" />
+							</h:commandLink>
+							
+						</p:column>
+					</p:row>
+
+					<p:row>
+						<p:column colspan="2">
+							<hr />
+						</p:column>
+
+					</p:row>
+
+					<p:row>
+						<p:column colspan="2">
+							<p:inputText placeholder="Username or Email" required="true"
+								value="#{loginHandlerBean.userName}"
+								requiredMessage="email or username is requuired" />
+						</p:column>
+
+					</p:row>
+					<p:row>
+						<p:column colspan="2">
+							<p:inputText value="#{loginHandlerBean.password}"
+								placeholder="Password" required="true"
+								requiredMessage="Password is requuired" />
+						</p:column>
+
+					</p:row>
+
+					<p:row>
+						<p:column colspan="2">
+							<p:selectBooleanCheckbox itemLabel="Remember Me" />
+						</p:column>
+
+					</p:row>
+
+					<p:row>
+						<p:column>
+							<p:commandButton value="login"
+								actionListener="#{loginHandlerBean.normalLogin()}"
+								update="growl" />
+						</p:column>
+						<p:column>
+							<p:commandLink value="Forget password?" />
+						</p:column>
+
+
+					</p:row>
+					<p:row>
+						<p:column colspan="2">
+							<hr />
+						</p:column>
+
+					</p:row>
+				</p:panelGrid>
+			</h:form>
+		</ui:define>
+	</ui:composition>
+
+</h:body>
+
+</html>

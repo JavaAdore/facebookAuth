@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:body>
+
+	<ui:composition template="WEB-INF/mainTemplate.xhtml">
+		<ui:define name="content">
+			<p:panel
+				style="position:absolute; top:150px ; left:550px; background:none !important; border :3px  dotted #660000;">
+				<h:form>
+					<h:outputLabel value="#{userSession.pullUserInfo()}" />
+
+					<h:dataTable var="entry" styleClass="centerH"
+						value="#{userSession.profileValues.entrySet().toArray()}">
+						<f:facet name="header">
+					        User Info <hr/>
+					        
+					    </f:facet>
+						<h:column headerText="Field" headerClass="white">
+						
+							<p:outputLabel value="#{entry.key}" />
+						</h:column>
+						<h:column headerText="Value">
+
+							<p:inputText value="#{entry.value}" />
+						</h:column>
+
+					</h:dataTable>
+				</h:form>
+			</p:panel>
+		</ui:define>
+
+	</ui:composition>
+
+</h:body>
+
+</html>

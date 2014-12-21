@@ -1,0 +1,77 @@
+@CHARSET "windows-1256";
+
+.red {
+	color: red !important;
+}
+
+.noBorder {
+	border: none !important;
+}
+
+.noBorder td {
+	border: none !important;
+}
+
+.noBorder tr {
+	border: none !important;
+}
+
+.centerH {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.centerV {
+	margin: auto !important;
+}
+
+.loginWithFacebook {
+	border: 2px solid blue;
+	color: white !important;
+	background: blue !important;
+	font-style: italic;
+	font-weight: bold;
+}
+.transparent
+{
+	background :none !important;
+}
+
+
+
+.ui-tree {
+    width: 150px !important;
+}
+
+.ui-tabs .ui-tabs-nav {
+    text-align: center;
+}
+
+    
+.ui-tabs .ui-tabs-nav li {
+    float: right !important;
+}
+
+
+	
+.white
+{
+	color :white !important;
+}
+
+.logo
+{
+	background-image:url(#{resource['images/logo.png']})!important;
+	width:200px !important;
+	height:50px !important;
+}
+
+.ui-widget-content
+{
+	color:#990000 !important;
+}
+
+.ui-inputfield
+{
+	color:blue !important;
+}
